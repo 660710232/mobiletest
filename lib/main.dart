@@ -43,30 +43,58 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: const Text("Color Layout"), backgroundColor: Colors.blue, centerTitle: true), 
-      backgroundColor: Colors.pink[40],
-      body: Column(
-        children: [
-          SizedBox(height: 20,),
-        Row(
-        children: [
-          SizedBox(width: 20,),
-          Container(width: 100, height: 100, color: Colors.red,),
-          SizedBox(width: 20,),
-          Container(width: 100, height: 100, color: Colors.green,),
-          SizedBox(width: 20,),
-          Container(width: 100, height: 100, color: Colors.blue,),
-        ],
-      ),SizedBox(height: 20,),
-      Row(children: [
-        SizedBox(width: 20,),
-          Expanded(flex: 1, child: Container(width: 100, height: 100, color: Colors.yellow,)),
-          SizedBox(width: 20,),
-          Expanded(flex: 2, child: Container(width: 100, height: 100, color: Colors.purple,)),
-          SizedBox(width: 20,),
-      ],)]
+      // appBar: AppBar(title: const Text("Color Layout"), backgroundColor: Colors.blue, centerTitle: true), 
+      // backgroundColor: Colors.pink[40],
+      body: Center(
+        child: Stack(
+          children: [
+            Container(
+              width: 120,
+              height: 300,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(20)
+              )
+            ),
+            Positioned(
+              top: 20,
+              left: 20,
+              child: Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(100)
+                )
+              )
+            ),
+            Positioned(
+              top: 110,
+              left: 20,
+              child: Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(100)
+                )
+              )
+            ),
+            Positioned(
+              bottom: 20,
+              left: 20,
+              child: Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(100)
+                )
+              )
+            )
+          ],
+        )
       )
-      
     );
   }
 }
