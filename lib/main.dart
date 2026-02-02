@@ -43,10 +43,30 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: const Text("Tenergyz"), backgroundColor: Colors.blue, centerTitle: true), 
+      appBar: AppBar(title: const Text("Color Layout"), backgroundColor: Colors.blue, centerTitle: true), 
       backgroundColor: Colors.pink[40],
-      body: Center(child: Container(height: 250, width: 250, decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(30)), child: Center(child: Text("Hello, Pongsatorn Phantawong 660710232", textAlign: TextAlign.center, style: TextStyle(fontSize: 24))))
-      ),
+      body: Column(
+        children: [
+          SizedBox(height: 20,),
+        Row(
+        children: [
+          SizedBox(width: 20,),
+          Container(width: 100, height: 100, color: Colors.red,),
+          SizedBox(width: 20,),
+          Container(width: 100, height: 100, color: Colors.green,),
+          SizedBox(width: 20,),
+          Container(width: 100, height: 100, color: Colors.blue,),
+        ],
+      ),SizedBox(height: 20,),
+      Row(children: [
+        SizedBox(width: 20,),
+          Expanded(flex: 1, child: Container(width: 100, height: 100, color: Colors.yellow,)),
+          SizedBox(width: 20,),
+          Expanded(flex: 2, child: Container(width: 100, height: 100, color: Colors.purple,)),
+          SizedBox(width: 20,),
+      ],)]
+      )
+      
     );
   }
 }
