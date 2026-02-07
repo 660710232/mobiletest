@@ -14,14 +14,45 @@ class ProfileCard extends StatelessWidget {
         color: Colors.orange,
         border: Border.all(color: Colors.black, width: 2),
       ),
-      child: Column(children: [
-        Text("Profile Card", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Roboto')),
-        image,
-        SizedBox(height: 3),
-        Text(name, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black)),
-        Text("phantawong_p@silpakorn.edu", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black)),
-        Text("660710232", style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black)),
-      ],),
+      child: Column(
+        children: [
+          Text(
+            "Profile Card",
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontFamily: 'Roboto',
+            ),
+          ),
+          image,
+          SizedBox(height: 3),
+          Text(
+            name,
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          Text(
+            "phantawong_p@silpakorn.edu",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          Text(
+            "660710232",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextCard extends StatelessWidget {
-  final String text;
+  final String text ;
   final Color color;
   const TextCard({super.key, required this.text, required this.color});
 
