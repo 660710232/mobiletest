@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobiletest/screen/greeting_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,8 +21,7 @@ class MyApp extends StatelessWidget {
         // try changing the seedColor in the colorScheme below to Colors.green
         // and then invoke "hot reload" (save your changes or press the "hot
         // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
+        // the command
         // Notice that the counter didn't reset back to zero; the application
         // state is not lost during the reload. To reset the state, use hot
         // restart instead.
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.red),
       ),
-      home: HomeScreen(),
+      home: GreetingScreen(name: 'Pongsatorn Phantawong', bgColor: const Color.fromARGB(255, 173, 216, 237)),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -41,60 +41,23 @@ class HomeScreen extends StatelessWidget {
   // Render Screen
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: const Text("Color Layout"), backgroundColor: Colors.blue, centerTitle: true), 
-      // backgroundColor: Colors.pink[40],
-      body: Center(
-        child: Stack(
-          children: [
-            Container(
-              width: 120,
-              height: 300,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(20)
-              )
-            ),
-            Positioned(
-              top: 20,
-              left: 20,
-              child: Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(100)
-                )
-              )
-            ),
-            Positioned(
-              top: 110,
-              left: 20,
-              child: Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  color: Colors.yellow,
-                  borderRadius: BorderRadius.circular(100)
-                )
-              )
-            ),
-            Positioned(
-              bottom: 20,
-              left: 20,
-              child: Container(
-                width: 80,
-                height: 80,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(100)
-                )
-              )
-            )
-          ],
-        )
-      )
+      appBar: AppBar(
+        title: const Text("Color Layout"),
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+      ),
+      backgroundColor: Colors.pink[40],
+      body: ListView.separated(
+        itemCount: 15,
+        itemBuilder: (context, index) {
+          return Text('Item $index');
+        },
+        separatorBuilder: (context, index) {
+          return const Divider();
+        },
+      ),
     );
   }
 }
